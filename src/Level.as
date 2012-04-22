@@ -25,7 +25,6 @@ package
 			_small_tiles = new Tilemap(Assets.TILE_SET, 640, 640, 20, 20);
 			_grid = new Grid(640, 640, 20, 20);
 			
-//			graphic = _large_tiles;
 			graphic = new Graphiclist(_large_tiles, _small_tiles);
 			
 			this.mask = _grid;
@@ -36,10 +35,8 @@ package
 			var dataList:XMLList;
 			var dataElement:XML;
 			dataList = levelData.large_tiles.tile;
-//			trace(dataList);
 			for each (dataElement in dataList) 
 			{
-//				trace(int(dataElement.@x),int(dataElement.@y));
 				_large_tiles.setTile(int(dataElement.@x), 
 					int(dataElement.@y),
 					int(dataElement.@tx));

@@ -2,6 +2,11 @@
   <objects>
     <playerStart id="0" x="160" y="320" />
     <sizeChanger id="1" x="400" y="320" />
+    <gate id="2" x="560" y="320" />
+    <gate id="3" x="560" y="340" />
+    <gate id="4" x="560" y="360" />
+    <gate id="5" x="560" y="380" />
+    <key id="6" x="200" y="180" />
   </objects>
   <solids exportMode="Bitstring">11111111111111111111111111111111
 11111111111111111111111111111111

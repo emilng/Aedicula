@@ -1,6 +1,7 @@
 package
 {
 	import net.flashpunk.Entity;
+	import net.flashpunk.FP;
 	import net.flashpunk.Graphic;
 	import net.flashpunk.Mask;
 	import net.flashpunk.graphics.Image;
@@ -34,23 +35,40 @@ package
 			var nextX:Number = x;
 			var nextY:Number = y;
 			
+			var dir:String = "";
+
 			if (Input.released("up")) 		{
 				nextY -= height;
+				dir = "up";
 			}
 			if (Input.released("down")) 	{
 				nextY += height;
+				dir = "down";
 			}
 			if (Input.released("left")) 	{
 				nextX -= width;
+				dir = "left";
 			}
 			if (Input.released("right")) 	{
 				nextX += width;
+				dir = "right";
 			}
 			
-			if (!collide("solid", nextX, nextY)) {
+			var gateKey:GateKey = (collide("key", nextX, nextY) as GateKey);
+			var blocked:Boolean = false;
+			if (gateKey) {
+				if (_isLarge) {
+					(FP.world as GameWorld).collectedKey = gateKey;
+				} else {
+					blocked = gateKey.push(dir);
+				}
+			}
+
+			if (!collide("solid", nextX, nextY) && !collide("gate", nextX, nextY) && !blocked) {
 				x = nextX;
 				y = nextY;
 			}
+
 			var sizeChanger:Entity = collide("sizeChanger", x, y);
 			if (sizeChanger) {
 				if (!_isSizeChanging) {
