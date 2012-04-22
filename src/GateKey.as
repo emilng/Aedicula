@@ -41,7 +41,7 @@ package
 					break;
 			}
 			
-			if (!collide("solid", nextX, nextY) && !collide("gate", nextX, nextY)) {
+			if (!collide("solid", nextX, nextY) && !collide("gate", nextX, nextY) && !collide("key", nextX, nextY)) {
 				x = nextX;
 				y = nextY;
 				return false;
