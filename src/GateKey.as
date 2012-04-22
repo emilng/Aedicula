@@ -9,7 +9,7 @@ package
 	
 	public class GateKey extends Entity
 	{
-		public var color:String;
+		private var _color:String;
 		
 		public function GateKey(x:Number=0, y:Number=0, graphic:Graphic=null, mask:Mask=null)
 		{
@@ -49,5 +49,31 @@ package
 			}
 			return true;
 		}
+
+		public function get color():String
+		{
+			return _color;
+		}
+
+		public function set color(value:String):void
+		{
+			_color = value;
+
+			switch (value) {
+				case "all":
+					this.graphic = new Image(Assets.TILE_SET, new Rectangle(80, 0 , 20, 20));
+					break;
+				case "red":
+					this.graphic = new Image(Assets.TILE_SET, new Rectangle(100, 0 , 20, 20));
+					break;
+				case "blue":
+					this.graphic = new Image(Assets.TILE_SET, new Rectangle(120, 0 , 20, 20));
+					break;
+				case "yellow":
+					this.graphic = new Image(Assets.TILE_SET, new Rectangle(140, 0 , 20, 20));
+					break;
+			}
+		}
+
 	}
 }
