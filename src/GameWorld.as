@@ -5,8 +5,7 @@ package
 	
 	public class GameWorld extends World
 	{
-		[Embed(source = "assets/level_01.oel", mimeType = "application/octet-stream")] 
-		private static const DEFAULT_MAP:Class;
+
 		
 		public function GameWorld()
 		{
@@ -20,7 +19,7 @@ package
 
 		override public function begin():void
 		{
-			var level:Level = Level(add(new Level(DEFAULT_MAP)));
+			var level:Level = Level(add(new Level(Assets.MENU)));
 
 			var dataList:XMLList;
 			var dataElement:XML;
@@ -48,6 +47,13 @@ package
 				_keys.push(gateKey);
 				addKey(gateKey);
 				add (gateKey);
+			}
+
+			dataList = level.levelData.objects.levelSelect;
+			for each(dataElement in dataList) {
+				var levelButton:LevelButton = new LevelButton(int(dataElement.@x), int(dataElement.@y));
+				levelButton.level = int(dataElement.@level);
+				add (levelButton);
 			}
 
 			dataList = level.levelData.objects.playerStart;

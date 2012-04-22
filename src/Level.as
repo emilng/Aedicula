@@ -42,6 +42,14 @@ package
 					int(dataElement.@tx));
 			}
 			
+			dataList = levelData.small_tiles.tile;
+			for each (dataElement in dataList) 
+			{
+				_small_tiles.setTile(int(dataElement.@x), 
+					int(dataElement.@y),
+					int(dataElement.@tx));
+			}
+
 			_grid.loadFromString(levelData.solids.toString(),"");
 			
 		}
