@@ -28,40 +28,32 @@ package
 //			graphic = _large_tiles;
 			graphic = new Graphiclist(_large_tiles, _small_tiles);
 			
-			type = "level";
+			this.mask = _grid;
+			this.type = "solid";
 			
-			loadLevel(xml, _large_tiles, "large_tiles");
-//			loadLevel(xml, _small_tiles, "large_tiles");
+			loadLevel(xml);
+			
+			var dataList:XMLList;
+			var dataElement:XML;
+			dataList = levelData.large_tiles.tile;
+//			trace(dataList);
+			for each (dataElement in dataList) 
+			{
+//				trace(int(dataElement.@x),int(dataElement.@y));
+				_large_tiles.setTile(int(dataElement.@x), 
+					int(dataElement.@y),
+					int(dataElement.@tx));
+			}
+			
+			_grid.loadFromString(levelData.solids.toString(),"");
+			
 		}
 		
-		private function loadLevel(xml:Class, tiles:Tilemap, setName:String, grid:*= null):void
+		private function loadLevel(xml:Class):void
 		{
 			var rawData:ByteArray = new xml;
 			var dataString:String = rawData.readUTFBytes(rawData.length);
 			levelData = new XML(dataString);
-			
-			var dataList:XMLList;
-			var dataElement:XML;
-			dataList = levelData[setName].tile;
-			trace(dataList);
-			for each (dataElement in dataList) 
-			{
-				trace(int(dataElement.@x),int(dataElement.@y));
-				tiles.setTile(int(dataElement.@x), 
-								int(dataElement.@y),
-								int(dataElement.@tx));
-			}
-			dataList = levelData.tiles.solids;
-			trace(dataList);
-			if (grid)
-			{
-				for each (dataElement in dataList) 
-				{
-					grid.setTile(int(dataElement.@x), 
-						int(dataElement.@y),
-						(int(dataElement.@tx) == 1));
-				}
-			}
 		}
 	}
 }

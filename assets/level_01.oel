@@ -1,6 +1,7 @@
 <level NewValue0="0">
   <objects>
     <playerStart id="0" x="160" y="320" />
+    <sizeChanger id="1" x="400" y="320" />
   </objects>
   <solids exportMode="Bitstring">11111111111111111111111111111111
 11111111111111111111111111111111
@@ -100,4 +101,5 @@
     <tile x="7" y="6" tx="2" ty="0" />
     <tile x="7" y="7" tx="2" ty="0" />
   </large_tiles>
+  <small_tiles tileset="small tiles" exportMode="XMLCoords" />
 </level>

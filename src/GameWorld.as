@@ -19,10 +19,17 @@ package
 
 			var dataList:XMLList;
 			var dataElement:XML;
+
+			dataList = level.levelData.objects.sizeChanger;
+			for each(dataElement in dataList) {
+				add (new SizeChanger(int(dataElement.@x), int(dataElement.@y)));
+			}
+
 			dataList = level.levelData.objects.playerStart;
 			for each(dataElement in dataList) {
 				add (new Player(int(dataElement.@x), int(dataElement.@y)));
 			}
+
 			super.begin();
 		}
 	}
