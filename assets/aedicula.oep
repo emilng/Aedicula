@@ -136,7 +136,7 @@
         <Height>80</Height>
       </Size>
       <Origin>
-        <X>80</X>
+        <X>0</X>
         <Y>0</Y>
       </Origin>
       <ImageDefinition DrawMode="Rectangle" ImagePath="large-tiles.png" Tiled="true">
@@ -175,7 +175,7 @@
         <RectColor A="255" R="255" G="128" B="0" />
       </ImageDefinition>
       <ValueDefinitions>
-        <ValueDefinition xsi:type="StringValueDefinition" Name="color" Default="all" MaxChars="-1" MultiLine="false" />
+        <ValueDefinition xsi:type="StringValueDefinition" Name="color" Default="red" MaxChars="-1" MultiLine="false" />
       </ValueDefinitions>
       <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
     </EntityDefinition>

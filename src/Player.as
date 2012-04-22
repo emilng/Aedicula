@@ -56,17 +56,20 @@ package
 			
 			var gateKey:GateKey = (collide("key", nextX, nextY) as GateKey);
 			var blocked:Boolean = false;
-			if (gateKey) {
-				if (_isLarge) {
-					(FP.world as GameWorld).collectedKey = gateKey;
-				} else {
-					blocked = gateKey.push(dir);
-				}
+
+			if (!_isLarge && gateKey) {
+				blocked = gateKey.push(dir);
 			}
 
 			if (!collide("solid", nextX, nextY) && !collide("gate", nextX, nextY) && !blocked) {
 				x = nextX;
 				y = nextY;
+			} else {
+				blocked = true;
+			}
+			
+			if (_isLarge && !blocked && gateKey) {
+				(FP.world as GameWorld).collectedKey = gateKey;
 			}
 
 			if (collide("win", x, y)) {
