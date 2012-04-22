@@ -18,6 +18,10 @@
     <gate id="15" x="240" y="140" color="red" />
     <gate id="16" x="420" y="220" color="blue" />
     <gate id="17" x="420" y="200" color="blue" />
+    <win id="18" x="620" y="320" />
+    <win id="19" x="620" y="340" />
+    <win id="20" x="620" y="360" />
+    <win id="21" x="620" y="380" />
   </objects>
   <solids exportMode="Bitstring">11111111111111111111111111111111
 11111111111111111111111111111111

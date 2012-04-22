@@ -1,6 +1,9 @@
 package
 {
+	import net.flashpunk.Entity;
 	import net.flashpunk.World;
+	import net.flashpunk.graphics.Image;
+	import net.flashpunk.utils.Input;
 	
 	
 	public class GameWorld extends World
@@ -17,9 +20,12 @@ package
 		private var _endGates:Array = [];
 		private var _gateColors:Object = {};
 
+		public var hasWon:Boolean = false;
+		private var _winImage:Entity;
+
 		override public function begin():void
 		{
-			var level:Level = Level(add(new Level(Assets.MENU)));
+			var level:Level = Level(add(new Level(Assets.LEVEL_01)));
 
 			var dataList:XMLList;
 			var dataElement:XML;
@@ -61,6 +67,15 @@ package
 				add (new Player(int(dataElement.@x), int(dataElement.@y)));
 			}
 
+			dataList = level.levelData.objects.win;
+			for each(dataElement in dataList) {
+				add (new WinEntity(int(dataElement.@x), int(dataElement.@y)));
+			}
+
+			_winImage = new Entity(200, 280, new Image(Assets.WIN));
+			_winImage.visible = false;
+			add(_winImage);
+
 			super.begin();
 		}
 
@@ -75,6 +90,13 @@ package
 
 				openGates(_keys, _endGates);
 				openGates(_gateColors[keyColor].keys, _gateColors[keyColor].gates);
+			}
+
+			if (hasWon) {
+				_winImage.visible = true;
+				if (Input.mousePressed) {
+					trace("click after win");
+				}
 			}
 		}
 

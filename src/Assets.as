@@ -18,6 +18,9 @@ package
 		[Embed (source = "assets/large-tiles.png")]
 		public static const LARGE_TILE_SET:Class;
 
+		[Embed (source = "assets/win.png")]
+		public static const WIN:Class;
+
 		public function Assets()
 		{
 		}

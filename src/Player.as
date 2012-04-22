@@ -69,6 +69,10 @@ package
 				y = nextY;
 			}
 
+			if (collide("win", x, y)) {
+				(FP.world as GameWorld).hasWon = true;
+			}
+
 			var sizeChanger:Entity = collide("sizeChanger", x, y);
 			if (sizeChanger) {
 				if (!_isSizeChanging) {
