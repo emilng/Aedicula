@@ -19,13 +19,45 @@ package
 		public var collectedKey:GateKey;
 		private var _endGates:Array = [];
 		private var _gateColors:Object = {};
-
 		public var hasWon:Boolean = false;
 		private var _winImage:Entity;
 
 		override public function begin():void
 		{
-			var level:Level = Level(add(new Level(Assets.LEVEL_01)));
+			reset(0);
+			super.begin();
+		}
+
+		public function reset(levelNum:int):void {
+			this.removeAll();
+
+			_keys = [];
+			collectedKey = null;
+			_endGates = [];
+			_gateColors = {};
+			hasWon = false;
+
+			var levelClass:Class;
+
+			switch(levelNum) {
+				case 1:
+					levelClass = Assets.LEVEL_01;
+					break;
+				case 2:
+					levelClass = Assets.LEVEL_02;
+					break;
+				case 3:
+					levelClass = Assets.LEVEL_03;
+					break;
+				case 4:
+					levelClass = Assets.LEVEL_04;
+					break;
+				default:
+					levelClass = Assets.MENU;
+					break;
+			}
+
+			var level:Level = Level(add(new Level(levelClass)));
 
 			var dataList:XMLList;
 			var dataElement:XML;
@@ -75,8 +107,6 @@ package
 			_winImage = new Entity(200, 280, new Image(Assets.WIN));
 			_winImage.visible = false;
 			add(_winImage);
-
-			super.begin();
 		}
 
 		override public function update():void
@@ -85,27 +115,37 @@ package
 
 			if (collectedKey) {
 				var keyColor:String = collectedKey.color;
-				removeKey(_gateColors[keyColor].keys, collectedKey);
+				if (keyColor == "all") {
+					removeKey(_keys, collectedKey);
+				} else {
+					removeKey(_gateColors[keyColor].keys, collectedKey);
+				}
 				collectedKey = null;
 
 				openGates(_keys, _endGates);
-				openGates(_gateColors[keyColor].keys, _gateColors[keyColor].gates);
+				if (keyColor != "all") {
+					openGates(_gateColors[keyColor].keys, _gateColors[keyColor].gates);
+				}
 			}
 
 			if (hasWon) {
 				_winImage.visible = true;
 				if (Input.mousePressed) {
-					trace("click after win");
+					reset(0);
 				}
 			}
 		}
 
 		private function removeKey(keys:Array, key:GateKey):void {
 			var keyIndex:int = keys.indexOf(key);
-			keys.splice(keyIndex, 1);
+			if (keyIndex >= 0) {
+				keys.splice(keyIndex, 1);
+			}
 			if (keys) {
 				keyIndex = _keys.indexOf(key);
-				_keys.splice(keyIndex, 1);
+				if (keyIndex >= 0) {
+					_keys.splice(keyIndex, 1);
+				}
 			}
 			remove(key);
 		}

@@ -12,6 +12,15 @@ package
 		[Embed(source = "assets/level_01.oel", mimeType = "application/octet-stream")] 
 		public static const LEVEL_01:Class;
 
+		[Embed(source = "assets/level_02.oel", mimeType = "application/octet-stream")] 
+		public static const LEVEL_02:Class;
+
+		[Embed(source = "assets/level_03.oel", mimeType = "application/octet-stream")] 
+		public static const LEVEL_03:Class;
+
+		[Embed(source = "assets/level_04.oel", mimeType = "application/octet-stream")] 
+		public static const LEVEL_04:Class;
+
 		[Embed (source = "assets/tilemap.png")]
 		public static const TILE_SET:Class;
 

@@ -1,6 +1,7 @@
 package
 {
 	import net.flashpunk.Entity;
+	import net.flashpunk.FP;
 	import net.flashpunk.Graphic;
 	import net.flashpunk.Mask;
 	import net.flashpunk.graphics.Image;
@@ -32,7 +33,7 @@ package
 			this.graphic = (isOver) ? _over : _out;
 			if (isOver && Input.mousePressed)
 			{
-				trace("click level", level);
+				(FP.world as GameWorld).reset(level);
 			}
 			
 		}

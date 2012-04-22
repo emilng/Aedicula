@@ -2,6 +2,7 @@ package
 {
 	import net.flashpunk.Engine;
 	import net.flashpunk.FP;
+	import net.flashpunk.World;
 	import net.flashpunk.utils.Input;
 	import net.flashpunk.utils.Key;
 	
@@ -22,7 +23,7 @@ package
 			
 			FP.screen.color = 0xFFFFFF;
 			FP.engine = this;
-			FP.world = _gameWorld;
+			FP.world = _gameWorld as World;
 		}
 	}
 }
