@@ -16,7 +16,13 @@ package
 		override public function begin():void
 		{
 			var level:Level = Level(add(new Level(DEFAULT_MAP)));
-			
+
+			var dataList:XMLList;
+			var dataElement:XML;
+			dataList = level.levelData.objects.playerStart;
+			for each(dataElement in dataList) {
+				add (new Player(int(dataElement.@x), int(dataElement.@y)));
+			}
 			super.begin();
 		}
 	}

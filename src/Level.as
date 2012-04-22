@@ -15,7 +15,7 @@ package
 		private var _small_tiles:Tilemap;
 		private var _large_tiles:Tilemap;
 		private var _grid:Grid;
-		public var LevelData:XML;
+		public var levelData:XML;
 		
 		
 		
@@ -25,23 +25,24 @@ package
 			_small_tiles = new Tilemap(Assets.TILE_SET, 640, 640, 20, 20);
 			_grid = new Grid(640, 640, 20, 20);
 			
-			graphic = _large_tiles;
-//			graphic = new Graphiclist(_large_tiles);//, _small_tiles);
+//			graphic = _large_tiles;
+			graphic = new Graphiclist(_large_tiles, _small_tiles);
 			
 			type = "level";
 			
 			loadLevel(xml, _large_tiles, "large_tiles");
+//			loadLevel(xml, _small_tiles, "large_tiles");
 		}
 		
 		private function loadLevel(xml:Class, tiles:Tilemap, setName:String, grid:*= null):void
 		{
 			var rawData:ByteArray = new xml;
 			var dataString:String = rawData.readUTFBytes(rawData.length);
-			var xmlData:XML = new XML(dataString);
+			levelData = new XML(dataString);
 			
 			var dataList:XMLList;
 			var dataElement:XML;
-			dataList = xmlData[setName].tile;
+			dataList = levelData[setName].tile;
 			trace(dataList);
 			for each (dataElement in dataList) 
 			{
@@ -50,7 +51,7 @@ package
 								int(dataElement.@y),
 								int(dataElement.@tx));
 			}
-			dataList = xmlData.tiles.solids;
+			dataList = levelData.tiles.solids;
 			trace(dataList);
 			if (grid)
 			{

@@ -1,5 +1,7 @@
 <level NewValue0="0">
-  <objects />
+  <objects>
+    <playerStart id="0" x="160" y="320" />
+  </objects>
   <solids exportMode="Bitstring">11111111111111111111111111111111
 11111111111111111111111111111111
 11111111111111111111111111111111
@@ -93,6 +95,7 @@
     <tile x="7" y="1" tx="2" ty="0" />
     <tile x="7" y="2" tx="2" ty="0" />
     <tile x="7" y="3" tx="2" ty="0" />
+    <tile x="7" y="4" tx="3" ty="0" />
     <tile x="7" y="5" tx="2" ty="0" />
     <tile x="7" y="6" tx="2" ty="0" />
     <tile x="7" y="7" tx="2" ty="0" />
