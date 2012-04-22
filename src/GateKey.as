@@ -9,6 +9,7 @@ package
 	
 	public class GateKey extends Entity
 	{
+		public var color:String;
 		
 		public function GateKey(x:Number=0, y:Number=0, graphic:Graphic=null, mask:Mask=null)
 		{

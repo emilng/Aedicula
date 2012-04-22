@@ -2,11 +2,22 @@
   <objects>
     <playerStart id="0" x="160" y="320" />
     <sizeChanger id="1" x="400" y="320" />
-    <gate id="2" x="560" y="320" />
-    <gate id="3" x="560" y="340" />
-    <gate id="4" x="560" y="360" />
-    <gate id="5" x="560" y="380" />
-    <key id="6" x="200" y="180" />
+    <gate id="2" x="560" y="320" color="all" />
+    <gate id="3" x="560" y="340" color="all" />
+    <gate id="4" x="560" y="360" color="all" />
+    <gate id="5" x="560" y="380" color="all" />
+    <key id="6" x="200" y="180" color="red" />
+    <key id="7" x="460" y="120" color="blue" />
+    <gate id="8" x="200" y="240" color="red" />
+    <gate id="9" x="220" y="240" color="red" />
+    <gate id="10" x="240" y="240" color="red" />
+    <gate id="11" x="240" y="220" color="red" />
+    <gate id="12" x="240" y="200" color="red" />
+    <gate id="13" x="240" y="180" color="red" />
+    <gate id="14" x="240" y="160" color="red" />
+    <gate id="15" x="240" y="140" color="red" />
+    <gate id="16" x="420" y="220" color="blue" />
+    <gate id="17" x="420" y="200" color="blue" />
   </objects>
   <solids exportMode="Bitstring">11111111111111111111111111111111
 11111111111111111111111111111111
