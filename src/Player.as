@@ -1,5 +1,7 @@
 package
 {
+	import flash.geom.Rectangle;
+	
 	import net.flashpunk.Entity;
 	import net.flashpunk.FP;
 	import net.flashpunk.Graphic;
@@ -20,8 +22,8 @@ package
 		{
 			super(x, y, graphic, mask);
 			
-			_smallPlayer = Image.createRect(20, 20, 0xFF0000);
-			_largePlayer = Image.createRect(80, 80, 0xFF0000);
+			_smallPlayer = new Image(Assets.TILE_SET, new Rectangle(180, 0, 20, 20));
+			_largePlayer = new Image(Assets.LARGE_TILE_SET, new Rectangle(400, 0, 80, 80));
 			
 			this.graphic = _largePlayer;
 			

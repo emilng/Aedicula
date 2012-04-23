@@ -1,9 +1,9 @@
 <level NewValue0="0">
   <objects>
-    <levelSelect id="0" x="160" y="160" level="1" />
-    <levelSelect id="1" x="320" y="160" level="2" />
-    <levelSelect id="2" x="160" y="320" level="3" />
-    <levelSelect id="3" x="320" y="320" level="4" />
+    <levelSelect id="0" x="160" y="320" level="1" />
+    <levelSelect id="1" x="320" y="320" level="2" />
+    <levelSelect id="2" x="240" y="400" level="3" />
+    <levelSelect id="3" x="400" y="400" level="4" />
   </objects>
   <solids exportMode="Bitstring">00000000000000000000000000000000
 00000000000000000000000000000000
@@ -56,7 +56,7 @@
     <tile x="1" y="7" tx="2" ty="0" />
     <tile x="2" y="0" tx="2" ty="0" />
     <tile x="2" y="1" tx="3" ty="0" />
-    <tile x="2" y="2" tx="4" ty="0" />
+    <tile x="2" y="2" tx="3" ty="0" />
     <tile x="2" y="3" tx="3" ty="0" />
     <tile x="2" y="4" tx="4" ty="0" />
     <tile x="2" y="5" tx="3" ty="0" />
@@ -67,12 +67,12 @@
     <tile x="3" y="2" tx="3" ty="0" />
     <tile x="3" y="3" tx="3" ty="0" />
     <tile x="3" y="4" tx="3" ty="0" />
-    <tile x="3" y="5" tx="3" ty="0" />
+    <tile x="3" y="5" tx="4" ty="0" />
     <tile x="3" y="6" tx="3" ty="0" />
     <tile x="3" y="7" tx="2" ty="0" />
     <tile x="4" y="0" tx="2" ty="0" />
     <tile x="4" y="1" tx="3" ty="0" />
-    <tile x="4" y="2" tx="4" ty="0" />
+    <tile x="4" y="2" tx="3" ty="0" />
     <tile x="4" y="3" tx="3" ty="0" />
     <tile x="4" y="4" tx="4" ty="0" />
     <tile x="4" y="5" tx="3" ty="0" />
@@ -83,7 +83,7 @@
     <tile x="5" y="2" tx="3" ty="0" />
     <tile x="5" y="3" tx="3" ty="0" />
     <tile x="5" y="4" tx="3" ty="0" />
-    <tile x="5" y="5" tx="3" ty="0" />
+    <tile x="5" y="5" tx="4" ty="0" />
     <tile x="5" y="6" tx="3" ty="0" />
     <tile x="5" y="7" tx="2" ty="0" />
     <tile x="6" y="0" tx="2" ty="0" />
@@ -104,15 +104,15 @@
     <tile x="7" y="7" tx="2" ty="0" />
   </large_tiles>
   <small_tiles tileset="small tiles" exportMode="XMLCoords">
-    <tile x="9" y="9" tx="8" ty="0" />
     <tile x="9" y="17" tx="8" ty="0" />
-    <tile x="9" y="18" tx="8" ty="0" />
-    <tile x="10" y="17" tx="8" ty="0" />
-    <tile x="17" y="9" tx="8" ty="0" />
+    <tile x="13" y="21" tx="8" ty="0" />
+    <tile x="13" y="22" tx="8" ty="0" />
+    <tile x="14" y="21" tx="8" ty="0" />
     <tile x="17" y="17" tx="8" ty="0" />
-    <tile x="17" y="18" tx="8" ty="0" />
-    <tile x="18" y="9" tx="8" ty="0" />
     <tile x="18" y="17" tx="8" ty="0" />
-    <tile x="18" y="18" tx="8" ty="0" />
+    <tile x="21" y="21" tx="8" ty="0" />
+    <tile x="21" y="22" tx="8" ty="0" />
+    <tile x="22" y="21" tx="8" ty="0" />
+    <tile x="22" y="22" tx="8" ty="0" />
   </small_tiles>
 </level>
