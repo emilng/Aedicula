@@ -30,6 +30,9 @@ package
 		[Embed (source = "assets/win.png")]
 		public static const WIN:Class;
 
+		[Embed (source = "assets/title.png")]
+		public static const TITLE:Class;
+
 		public function Assets()
 		{
 		}

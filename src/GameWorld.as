@@ -21,8 +21,10 @@ package
 		private var _gateColors:Object = {};
 		public var hasWon:Boolean = false;
 		private var _winImage:Entity;
+		private var _titleImage:Entity;
 		public var hideText:Boolean = false;
 		private var _texts:Array = [];
+		public var levelNum:int;
 
 		override public function begin():void
 		{
@@ -31,6 +33,7 @@ package
 		}
 
 		public function reset(levelNum:int):void {
+			this.levelNum = levelNum;
 			this.removeAll();
 
 			_keys = [];
@@ -120,6 +123,14 @@ package
 			_winImage = new Entity(200, 280, new Image(Assets.WIN));
 			_winImage.visible = false;
 			add(_winImage);
+
+			if (levelNum == 0) {
+				_titleImage = new Entity(162, 180, new Image(Assets.TITLE));
+				add(_titleImage);
+			} else {
+				add(new MenuButton(500, 0));
+				add(new ResetButton(580, 0));
+			}
 		}
 
 		override public function update():void
