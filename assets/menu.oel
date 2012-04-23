@@ -4,6 +4,7 @@
     <levelSelect id="1" x="320" y="320" level="2" />
     <levelSelect id="2" x="240" y="400" level="3" />
     <levelSelect id="3" x="400" y="400" level="4" />
+    <instructions id="4" x="160" y="520" verbiage="Click on a tile above to choose a level" size="16" />
   </objects>
   <solids exportMode="Bitstring">00000000000000000000000000000000
 00000000000000000000000000000000

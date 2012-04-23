@@ -35,6 +35,8 @@
     <gate id="32" x="320" y="540" color="red" />
     <key id="33" x="380" y="80" color="red" />
     <key id="34" x="520" y="340" color="all" />
+    <instructions id="35" x="100" y="500" verbiage="User size changer to shrink to fit in small places" size="14" />
+    <instructions id="36" x="100" y="520" verbiage="Keys can be pushed but not picked up when you are small" size="14" />
   </objects>
   <solids exportMode="Bitstring">11111111111111111111111111111111
 11111111111111111111111111111111

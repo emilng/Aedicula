@@ -21,6 +21,8 @@ package
 		private var _gateColors:Object = {};
 		public var hasWon:Boolean = false;
 		private var _winImage:Entity;
+		public var hideText:Boolean = false;
+		private var _texts:Array = [];
 
 		override public function begin():void
 		{
@@ -36,6 +38,8 @@ package
 			_endGates = [];
 			_gateColors = {};
 			hasWon = false;
+			hideText = false;
+			_texts = [];
 
 			var levelClass:Class;
 
@@ -104,6 +108,15 @@ package
 				add (new WinEntity(int(dataElement.@x), int(dataElement.@y)));
 			}
 
+			dataList = level.levelData.objects.instructions;
+			for each(dataElement in dataList) {
+				var textEntity:TextEntity = new TextEntity(int(dataElement.@x), int(dataElement.@y));
+				textEntity.text = dataElement.@verbiage;
+				textEntity.size = int(dataElement.@size);
+				_texts.push(textEntity);
+				add (textEntity);
+			}
+
 			_winImage = new Entity(200, 280, new Image(Assets.WIN));
 			_winImage.visible = false;
 			add(_winImage);
@@ -132,6 +145,12 @@ package
 				_winImage.visible = true;
 				if (Input.mousePressed) {
 					reset(0);
+				}
+			}
+
+			if (hideText) {
+				for each (var textEntity:TextEntity in _texts) {
+					textEntity.visible = false;
 				}
 			}
 		}

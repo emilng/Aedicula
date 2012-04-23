@@ -59,6 +59,8 @@
     <gate id="56" x="400" y="340" color="blue" />
     <gate id="57" x="400" y="360" color="blue" />
     <key id="58" x="440" y="340" color="all" />
+    <instructions id="59" x="120" y="500" verbiage="Use arrow keys to move. Pick up keys to unlock gates." size="14" />
+    <instructions id="60" x="120" y="520" verbiage=" Get to exit to win." size="14" />
   </objects>
   <solids exportMode="Bitstring">11111111111111111111111111111111
 11111111111111111111111111111111

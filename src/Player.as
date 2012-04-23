@@ -78,6 +78,10 @@ package
 				(FP.world as GameWorld).hasWon = true;
 			}
 
+			if (previousX != nextX || previousY != nextY) {
+				(FP.world as GameWorld).hideText = true;
+			}
+
 			var sizeChanger:Entity = collide("sizeChanger", x, y);
 			if (sizeChanger) {
 				if (!_isSizeChanging) {
