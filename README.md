@@ -2,7 +2,9 @@ Aedicula
 ========
 
 ### Premise
-Aedicula is a puzzle game involving Alice in Wonderland-style size-changing. You're a minor deity trapped in a temple complex and you're trying to escape.
+Aedicula is a puzzle game involving Alice in Wonderland-style size-changing.
+
+You're a minor deity trapped in a temple complex and you're trying to escape.
 
 ### Progress
 [2012/04/21](http://www.ludumdare.com/compo/2012/04/21/aedicula-first-night-progress/) - game premise, data importing, initial artwork
